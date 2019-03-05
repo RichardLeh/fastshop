@@ -1,15 +1,15 @@
 //
-//  MovieDatabaseTests.swift
-//  MovieDatabaseTests
+//  MovieTests.swift
+//  MovieTests
 //
 //  Created by Richard Leh on 05/03/19.
 //  Copyright © 2019 Richard Leh. All rights reserved.
 //
 
 import XCTest
-@testable import MovieDatabase
+@testable import Movie
 
-class MovieDatabaseTests: XCTestCase {
+class MovieTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
