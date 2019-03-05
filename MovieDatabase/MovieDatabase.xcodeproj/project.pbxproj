@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		C5E1FD29222ED89C00485EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */; };
-		C5E1FD2B222ED89C00485EA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD2A222ED89C00485EA9 /* ViewController.swift */; };
-		C5E1FD2E222ED89C00485EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD2C222ED89C00485EA9 /* Main.storyboard */; };
+		C5E1FD2B222ED89C00485EA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */; };
 		C5E1FD30222ED89E00485EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */; };
 		C5E1FD33222ED89E00485EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD31222ED89E00485EA9 /* LaunchScreen.storyboard */; };
 		C5E1FD3E222ED89E00485EA9 /* MovieDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD3D222ED89E00485EA9 /* MovieDatabaseTests.swift */; };
 		C5E1FD4B222EDDD700485EA9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */; };
+		C5E1FD51222EF31200485EA9 /* LayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E1FD50222EF31100485EA9 /* LayoutKit.framework */; };
+		C5E1FD53222EF9D800485EA9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD52222EF9D800485EA9 /* Coordinator.swift */; };
+		C5E1FD56222EFC5100485EA9 /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD55222EFC5100485EA9 /* CodeViewProtocol.swift */; };
+		C5E1FD5A222F197E00485EA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD59222F197E00485EA9 /* HomeView.swift */; };
+		C5E1FD5C222F1DC300485EA9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD5B222F1DC300485EA9 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +33,7 @@
 /* Begin PBXFileReference section */
 		C5E1FD25222ED89C00485EA9 /* MovieDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5E1FD2A222ED89C00485EA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C5E1FD2D222ED89C00485EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5E1FD32222ED89E00485EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5E1FD34222ED89E00485EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +41,11 @@
 		C5E1FD3D222ED89E00485EA9 /* MovieDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabaseTests.swift; sourceTree = "<group>"; };
 		C5E1FD3F222ED89E00485EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C5E1FD50222EF31100485EA9 /* LayoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayoutKit.framework; path = Carthage/Build/iOS/LayoutKit.framework; sourceTree = "<group>"; };
+		C5E1FD52222EF9D800485EA9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C5E1FD55222EFC5100485EA9 /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
+		C5E1FD59222F197E00485EA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C5E1FD5B222F1DC300485EA9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E1FD51222EF31200485EA9 /* LayoutKit.framework in Frameworks */,
 				C5E1FD4B222EDDD700485EA9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,12 +90,10 @@
 		C5E1FD27222ED89C00485EA9 /* MovieDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */,
-				C5E1FD2A222ED89C00485EA9 /* ViewController.swift */,
-				C5E1FD2C222ED89C00485EA9 /* Main.storyboard */,
-				C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */,
-				C5E1FD31222ED89E00485EA9 /* LaunchScreen.storyboard */,
-				C5E1FD34222ED89E00485EA9 /* Info.plist */,
+				C5E1FD58222F196B00485EA9 /* Home */,
+				C5E1FD54222EFA2900485EA9 /* Resource */,
+				C5E1FD52222EF9D800485EA9 /* Coordinator.swift */,
+				C5E1FD55222EFC5100485EA9 /* CodeViewProtocol.swift */,
 			);
 			path = MovieDatabase;
 			sourceTree = "<group>";
@@ -103,9 +110,31 @@
 		C5E1FD49222EDDD600485EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5E1FD50222EF31100485EA9 /* LayoutKit.framework */,
 				C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5E1FD54222EFA2900485EA9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */,
+				C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */,
+				C5E1FD31222ED89E00485EA9 /* LaunchScreen.storyboard */,
+				C5E1FD34222ED89E00485EA9 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C5E1FD58222F196B00485EA9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */,
+				C5E1FD59222F197E00485EA9 /* HomeView.swift */,
+				C5E1FD5B222F1DC300485EA9 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +147,7 @@
 				C5E1FD21222ED89C00485EA9 /* Sources */,
 				C5E1FD22222ED89C00485EA9 /* Frameworks */,
 				C5E1FD23222ED89C00485EA9 /* Resources */,
+				C5E1FD57222F16F100485EA9 /* SwiftLint */,
 				C5E1FD48222EDD2600485EA9 /* Carthage */,
 			);
 			buildRules = (
@@ -192,7 +222,6 @@
 			files = (
 				C5E1FD33222ED89E00485EA9 /* LaunchScreen.storyboard in Resources */,
 				C5E1FD30222ED89E00485EA9 /* Assets.xcassets in Resources */,
-				C5E1FD2E222ED89C00485EA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,16 +244,36 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LayoutKit.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework\n",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LayoutKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		C5E1FD57222F16F100485EA9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -233,8 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E1FD2B222ED89C00485EA9 /* ViewController.swift in Sources */,
+				C5E1FD2B222ED89C00485EA9 /* HomeViewController.swift in Sources */,
+				C5E1FD5C222F1DC300485EA9 /* HomeViewModel.swift in Sources */,
 				C5E1FD29222ED89C00485EA9 /* AppDelegate.swift in Sources */,
+				C5E1FD53222EF9D800485EA9 /* Coordinator.swift in Sources */,
+				C5E1FD5A222F197E00485EA9 /* HomeView.swift in Sources */,
+				C5E1FD56222EFC5100485EA9 /* CodeViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +310,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C5E1FD2C222ED89C00485EA9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5E1FD2D222ED89C00485EA9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C5E1FD31222ED89E00485EA9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -402,7 +447,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MovieDatabase/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDatabase/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,7 +469,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MovieDatabase/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDatabase/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
