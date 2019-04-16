@@ -10,6 +10,8 @@
 		C5DCF155226587550020B4B4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF154226587550020B4B4 /* Config.swift */; };
 		C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */; };
 		C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF15A226589570020B4B4 /* MovieAPI.swift */; };
+		C5DCF15D22658C960020B4B4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF15C22658C960020B4B4 /* Result.swift */; };
+		C5DCF15F22658CB30020B4B4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF15E22658CB30020B4B4 /* APIError.swift */; };
 		C5E1FD29222ED89C00485EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */; };
 		C5E1FD2B222ED89C00485EA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */; };
 		C5E1FD30222ED89E00485EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		C5DCF154226587550020B4B4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProtocol.swift; sourceTree = "<group>"; };
 		C5DCF15A226589570020B4B4 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
+		C5DCF15C22658C960020B4B4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C5DCF15E22658CB30020B4B4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		C5E1FD25222ED89C00485EA9 /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E1FD28222ED89C00485EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */,
 				C5DCF154226587550020B4B4 /* Config.swift */,
 				C5DCF15A226589570020B4B4 /* MovieAPI.swift */,
+				C5DCF15C22658C960020B4B4 /* Result.swift */,
+				C5DCF15E22658CB30020B4B4 /* APIError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -311,9 +317,11 @@
 				C5E1FD2B222ED89C00485EA9 /* HomeViewController.swift in Sources */,
 				C5DCF155226587550020B4B4 /* Config.swift in Sources */,
 				C5E1FD5C222F1DC300485EA9 /* HomeViewModel.swift in Sources */,
+				C5DCF15F22658CB30020B4B4 /* APIError.swift in Sources */,
 				C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */,
 				C5E1FD29222ED89C00485EA9 /* AppDelegate.swift in Sources */,
 				C5E1FD53222EF9D800485EA9 /* Coordinator.swift in Sources */,
+				C5DCF15D22658C960020B4B4 /* Result.swift in Sources */,
 				C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */,
 				C5E1FD5A222F197E00485EA9 /* HomeView.swift in Sources */,
 				C5E1FD56222EFC5100485EA9 /* CodeView.swift in Sources */,
