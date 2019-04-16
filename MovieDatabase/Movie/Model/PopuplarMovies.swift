@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PopularMoviesResponse: Codable {
+final class PopularMovies: Codable {
     var page: Int?
     var totalResults: Int?
     var totalPages: Int?

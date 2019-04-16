@@ -18,5 +18,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.view = HomeView(frame: self.view.frame)
+        
+        Request()
     }
 }
