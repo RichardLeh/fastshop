@@ -10,15 +10,25 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    lazy var controllerView: HomeView! = { //swiftlint:disable force_cast
+    lazy var mainView: HomeView! = { //swiftlint:disable force_cast
         self.view as! HomeView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view = HomeView(frame: self.view.frame)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func loadData() {
         
-        Request()
+        _ = Request()
+        
+        let movie = Movie()
+        
+        self.mainView.viewModel = HomeViewModel(movies: [movie])
     }
 }

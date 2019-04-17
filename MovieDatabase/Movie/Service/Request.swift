@@ -25,7 +25,7 @@ struct Request {
                 do {
                     let model = try decoder.decode(PopularMovies.self, from: response.data!)
                     print(model)
-                    print(model.totalPages)
+                    print(model.totalPages!)
                 } catch let err {
                     print("Error: \(err)")
                 }

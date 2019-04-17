@@ -8,4 +8,19 @@
 
 import Foundation
 
-struct HomeViewModel { }
+protocol HomeViewModelProtocol {
+    var items: [Movie] { get }
+}
+
+struct HomeViewModel: HomeViewModelProtocol {
+    var items: [Movie]
+    init() {
+        items = []
+    }
+}
+
+extension HomeViewModel {
+    init(movies: [Movie]) {
+        self.items = movies
+    }
+}

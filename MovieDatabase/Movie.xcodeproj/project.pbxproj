@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C515BB392266DE150032EEDB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515BB382266DE150032EEDB /* Identifiable.swift */; };
 		C5DCF155226587550020B4B4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF154226587550020B4B4 /* Config.swift */; };
 		C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */; };
 		C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF15A226589570020B4B4 /* MovieAPI.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C515BB382266DE150032EEDB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C5DCF154226587550020B4B4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProtocol.swift; sourceTree = "<group>"; };
 		C5DCF15A226589570020B4B4 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C515BB372266DDF70032EEDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C515BB382266DE150032EEDB /* Identifiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C5DCF153226587320020B4B4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		C5E1FD27222ED89C00485EA9 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				C515BB372266DDF70032EEDB /* Extensions */,
 				C5DCF159226587B30020B4B4 /* Model */,
 				C5DCF153226587320020B4B4 /* Service */,
 				C5E1FD58222F196B00485EA9 /* Home */,
@@ -336,6 +347,7 @@
 				C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */,
 				C5DCF16522658F6B0020B4B4 /* Request.swift in Sources */,
 				C5E1FD5A222F197E00485EA9 /* HomeView.swift in Sources */,
+				C515BB392266DE150032EEDB /* Identifiable.swift in Sources */,
 				C5E1FD56222EFC5100485EA9 /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
