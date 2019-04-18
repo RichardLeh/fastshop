@@ -10,7 +10,9 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    lazy var mainView: HomeView! = { //swiftlint:disable force_cast
+    var api = MovieAPI.shared
+    
+    lazy var mainView: HomeView = { //swiftlint:disable force_cast
         self.view as! HomeView
     }()
     
@@ -25,8 +27,18 @@ final class HomeViewController: UIViewController {
     
     func loadData() {
         
-        _ = Request()
-        
-        self.mainView.viewModel = HomeViewModel(movies: [Movie(), Movie(), Movie(), Movie(), Movie(), Movie()])
+        api.fetchPopularMovies(page: 0) { result in
+            switch result {
+            case .success(let response):
+                guard let movies = response.results else {
+                    return
+                }
+                
+                let model = HomeViewModel(movies: movies)
+                self.mainView.viewModel = model
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MovieServiceProtocol {
-    func fetchPopularMovies()
+    func fetchPopularMovies(page: Int, completion: @escaping (Result<PopularMovies, APIError>) -> Void)
 }

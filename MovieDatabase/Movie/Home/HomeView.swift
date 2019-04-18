@@ -8,8 +8,6 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell, Identifiable { }
-
 final class HomeView: UIView {
     
     let flowLayout: UICollectionViewFlowLayout = {
@@ -24,7 +22,9 @@ final class HomeView: UIView {
         return collectionView
     }()
     lazy var titleLabel: UILabel = {
-        return UILabel(frame: .zero)
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        return label
     }()
     
     var viewModel: HomeViewModel = HomeViewModel() {
@@ -73,11 +73,17 @@ extension HomeView: CodeView {
     }
     func setupAdditionalConfiguration() {
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(MovieCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         
-        backgroundColor = .red
-        collectionView.backgroundColor = .green
+        backgroundColor = .black
+    }
+}
+
+extension HomeView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath, viewModel.items[indexPath.row].title)
     }
 }
 
@@ -92,7 +98,8 @@ extension HomeView: UICollectionViewDataSource {
                                                             for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .magenta
+        let movie = viewModel.items[indexPath.row]
+        cell.titleLabel.text = movie.title
         return cell
     }
 }

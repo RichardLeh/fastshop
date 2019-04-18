@@ -29,7 +29,8 @@ final class MovieAPI {
 }
 
 extension MovieAPI: MovieServiceProtocol {
-    func fetchPopularMovies() {
-        
+    func fetchPopularMovies(page: Int, completion: @escaping (Result<PopularMovies, APIError>) -> Void) {
+        let request = Request(url: Endpoints.popular.path)
+        request.get(completion: completion)
     }
 }

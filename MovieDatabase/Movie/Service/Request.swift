@@ -11,8 +11,17 @@ import Foundation
 
 struct Request {
     
-    init() {
-        let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=885c51f0e78055e8164c324b76fec8f9&language=en-US&page=1"
+    private enum HTTPMethod: String {
+    case get = "GET"
+    }
+    
+    private(set) var urlString: String
+    
+    init(url: String) {
+        urlString = "\(Config.baseUrl)\(Config.version)/\(url)?api_key=\(Config.apiKey)"
+    }
+    
+    func get<T: Decodable>(completion: @escaping Response<T>) {
         
         Alamofire.request(urlString).responseData { response in
             print("Request: \(String(describing: response.request))")   // original url request
@@ -23,11 +32,15 @@ struct Request {
                 print("JSON: \(json)") // serialized json response
                 let decoder = JSONDecoder()
                 do {
-                    let model = try decoder.decode(PopularMovies.self, from: response.data!)
-                    print(model)
-                    print(model.totalPages!)
+                    let model = try decoder.decode(T.self, from: response.data!)
+                    DispatchQueue.main.async {
+                        completion(.success(model))
+                    }
                 } catch let err {
                     print("Error: \(err)")
+                    DispatchQueue.main.async {
+                        completion(.error(APIError.parseError(err.localizedDescription)))
+                    }
                 }
             }
         }
