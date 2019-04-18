@@ -27,8 +27,6 @@ final class HomeViewController: UIViewController {
         
         _ = Request()
         
-        let movie = Movie()
-        
-        self.mainView.viewModel = HomeViewModel(movies: [movie])
+        self.mainView.viewModel = HomeViewModel(movies: [Movie(), Movie(), Movie(), Movie(), Movie(), Movie()])
     }
 }
