@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class HomeView: UIView {
     
     let flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 90, height: 160)
+        flowLayout.itemSize = CGSize(width: 110, height: 180)
         return flowLayout
     }()
     lazy var collectionView: UICollectionView = {
@@ -100,9 +99,8 @@ extension HomeView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let movie = viewModel.items[indexPath.row]
-        cell.titleLabel.text = movie.title
-        cell.posterImageView.kf.setImage(with: movie.posterURL)
-        
+        cell.setupView(with: movie)
+
         return cell
     }
 }

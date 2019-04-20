@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C515BB392266DE150032EEDB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515BB382266DE150032EEDB /* Identifiable.swift */; };
 		C515BB3D22683BD20032EEDB /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515BB3C22683BD20032EEDB /* MovieCollectionViewCell.swift */; };
+		C52DFDFC226ADC8C005FEBB0 /* MoviePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DFDFB226ADC8C005FEBB0 /* MoviePlaceholder.swift */; };
 		C55ADD97226AD6EC002A6265 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55ADD96226AD6EC002A6265 /* Kingfisher.framework */; };
 		C5DCF155226587550020B4B4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF154226587550020B4B4 /* Config.swift */; };
 		C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		C515BB382266DE150032EEDB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C515BB3C22683BD20032EEDB /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		C52DFDFB226ADC8C005FEBB0 /* MoviePlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlaceholder.swift; sourceTree = "<group>"; };
 		C55ADD96226AD6EC002A6265 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		C5DCF154226587550020B4B4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProtocol.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C52DFDFA226ADC8C005FEBB0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C52DFDFB226ADC8C005FEBB0 /* MoviePlaceholder.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C5DCF153226587320020B4B4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		C5E1FD27222ED89C00485EA9 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				C52DFDFA226ADC8C005FEBB0 /* Helper */,
 				C515BB372266DDF70032EEDB /* Extensions */,
 				C5DCF159226587B30020B4B4 /* Model */,
 				C5DCF153226587320020B4B4 /* Service */,
@@ -360,6 +371,7 @@
 				C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */,
 				C5E1FD29222ED89C00485EA9 /* AppDelegate.swift in Sources */,
 				C5E1FD53222EF9D800485EA9 /* Coordinator.swift in Sources */,
+				C52DFDFC226ADC8C005FEBB0 /* MoviePlaceholder.swift in Sources */,
 				C5DCF15D22658C960020B4B4 /* Result.swift in Sources */,
 				C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */,
 				C5DCF16522658F6B0020B4B4 /* Request.swift in Sources */,

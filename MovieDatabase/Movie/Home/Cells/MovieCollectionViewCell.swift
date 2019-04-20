@@ -21,6 +21,8 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
     
     var posterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -28,6 +30,28 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
         super.init(frame: frame)
         self.contentView.backgroundColor = .magenta
         setupView()
+    }
+    
+    func setupView(with movie: Movie) {
+        titleLabel.text = movie.title
+        
+        let moviePlaceholder = MoviePlaceholder()
+        
+        posterImageView.image = nil
+        posterImageView.kf.setImage(with: movie.posterURL, // TODO: refator depreceated method
+                                    placeholder: moviePlaceholder,
+                                    options: [.transition(.fade(0.5))],
+                                    progressBlock: nil) { [weak self] (image, error, cache, url) in
+                                        
+                                        guard image != nil else {
+                                            self?.posterImageView.image = #imageLiteral(resourceName: "icon-error-poster")
+                                            moviePlaceholder.remove()
+                                            
+                                            return
+                                        }
+                                        
+                                        moviePlaceholder.remove()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
