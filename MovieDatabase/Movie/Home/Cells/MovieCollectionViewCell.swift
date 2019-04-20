@@ -38,20 +38,17 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
         let moviePlaceholder = MoviePlaceholder()
         
         posterImageView.image = nil
-        posterImageView.kf.setImage(with: movie.posterURL, // TODO: refator depreceated method
+        posterImageView.kf.setImage(with: movie.posterURL,
                                     placeholder: moviePlaceholder,
-                                    options: [.transition(.fade(0.5))],
-                                    progressBlock: nil) { [weak self] (image, error, cache, url) in
-                                        
-                                        guard image != nil else {
-                                            self?.posterImageView.image = #imageLiteral(resourceName: "icon-error-poster")
+                                    options: [.transition(.fade(0.5))]) { result in
+                                        switch result {
+                                        case .success(let value):
                                             moviePlaceholder.remove()
-                                            
-                                            return
+                                            print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                                        case .failure(let error):
+                                            print("Job failed: \(error.localizedDescription)")
                                         }
-                                        
-                                        moviePlaceholder.remove()
-        }
+                                    }
     }
     
     required init?(coder aDecoder: NSCoder) {
