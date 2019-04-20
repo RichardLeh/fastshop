@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C515BB392266DE150032EEDB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515BB382266DE150032EEDB /* Identifiable.swift */; };
 		C515BB3D22683BD20032EEDB /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515BB3C22683BD20032EEDB /* MovieCollectionViewCell.swift */; };
+		C55ADD97226AD6EC002A6265 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55ADD96226AD6EC002A6265 /* Kingfisher.framework */; };
 		C5DCF155226587550020B4B4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF154226587550020B4B4 /* Config.swift */; };
 		C5DCF1572265875E0020B4B4 /* MovieServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */; };
 		C5DCF15B226589570020B4B4 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCF15A226589570020B4B4 /* MovieAPI.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		C515BB382266DE150032EEDB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C515BB3C22683BD20032EEDB /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		C55ADD96226AD6EC002A6265 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		C5DCF154226587550020B4B4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C5DCF1562265875E0020B4B4 /* MovieServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProtocol.swift; sourceTree = "<group>"; };
 		C5DCF15A226589570020B4B4 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55ADD97226AD6EC002A6265 /* Kingfisher.framework in Frameworks */,
 				C5E1FD51222EF31200485EA9 /* LayoutKit.framework in Frameworks */,
 				C5E1FD4B222EDDD700485EA9 /* Alamofire.framework in Frameworks */,
 			);
@@ -171,6 +174,7 @@
 		C5E1FD49222EDDD600485EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C55ADD96226AD6EC002A6265 /* Kingfisher.framework */,
 				C5E1FD50222EF31100485EA9 /* LayoutKit.framework */,
 				C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */,
 			);
@@ -308,6 +312,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/LayoutKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -315,6 +320,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework\n",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LayoutKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

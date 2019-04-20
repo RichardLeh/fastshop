@@ -25,6 +25,10 @@ final class HomeViewController: UIViewController {
         loadData()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func loadData() {
         
         api.fetchPopularMovies(page: 0) { result in

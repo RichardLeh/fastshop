@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeView: UIView {
     
@@ -100,6 +101,8 @@ extension HomeView: UICollectionViewDataSource {
         }
         let movie = viewModel.items[indexPath.row]
         cell.titleLabel.text = movie.title
+        cell.posterImageView.kf.setImage(with: movie.posterURL)
+        
         return cell
     }
 }

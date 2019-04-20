@@ -1,2 +1,3 @@
 github "Alamofire/Alamofire" ~> 4.7.2
 github "viniciusfranca/LayoutKit" ~> 1.0.0
+github "onevcat/Kingfisher" ~> 5.0

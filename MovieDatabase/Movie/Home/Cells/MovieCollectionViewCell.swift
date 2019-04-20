@@ -19,6 +19,11 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
         return label
     }()
     
+    var posterImageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.backgroundColor = .magenta
@@ -32,10 +37,18 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
 
 extension MovieCollectionViewCell: CodeView {
     func buildViewHierarchy() {
-        addView(titleLabel)
+        addSubview(posterImageView)
+        addSubview(titleLabel)
     }
     
     func setupConstraints() {
+        posterImageView.layout.makeConstraints { (make) in
+            make.top.equalTo(self.layout.top)
+            make.right.equalTo(self.layout.right)
+            make.bottom.equalTo(self.layout.bottom)
+            make.left.equalTo(self.layout.left)
+        }
+        
         titleLabel.layout.makeConstraints { make in
             make.height.equalTo(constant: 40)
             make.left.equalTo(self.layout.left)

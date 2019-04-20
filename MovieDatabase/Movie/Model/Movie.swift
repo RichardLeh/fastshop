@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Movie: Codable {
     
@@ -18,6 +19,15 @@ class Movie: Codable {
     var posterPath: String?
     var dateAddedToFavorites: Date?
     var backdropPath: String?
+    
+    var posterImage: UIImage?
+    lazy var posterURL: URL? = {
+        guard let path = posterPath else {
+            return URL(string: "")
+        }
+        
+        return URL(string: "https://image.tmdb.org/t/p/w300\(path)")
+    }()
     
     enum CodingKeys: String, CodingKey {
         case movieId = "id"
