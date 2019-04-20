@@ -1,5 +1,5 @@
 //
-//  MovieAPI.swift
+//  MovieService.swift
 //  Movie
 //
 //  Created by Richard Leh on 16/04/19.
@@ -22,15 +22,23 @@ enum Endpoints {
     }
 }
 
-final class MovieAPI {
-    
-    static let shared = MovieAPI()
+protocol MovieServiceProtocol {
+    func fetchPopularMovies(page: Int, completion: @escaping (Result<PopularMovies, APIError>) -> Void)
+    func fetchGenres(completion: @escaping (Result<Genres, APIError>) -> Void)
+}
+
+final class MovieService {
     let baseUrl = "\(Config.baseUrl)/\(Config.version)"
 }
 
-extension MovieAPI: MovieServiceProtocol {
+extension MovieService: MovieServiceProtocol {
     func fetchPopularMovies(page: Int, completion: @escaping (Result<PopularMovies, APIError>) -> Void) {
         let request = Request(url: Endpoints.popular.path)
+        request.get(completion: completion)
+    }
+    
+    func fetchGenres(completion: @escaping (Result<Genres, APIError>) -> Void) {
+        let request = Request(url: Endpoints.genre.path)
         request.get(completion: completion)
     }
 }

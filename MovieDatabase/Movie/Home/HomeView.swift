@@ -8,22 +8,25 @@
 
 import UIKit
 
+let collectionViewHeight: CGFloat = 240.0
+
 final class HomeView: UIView {
     
     let flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 110, height: 180)
+        flowLayout.itemSize = CGSize(width: 110, height: collectionViewHeight - 20)
         return flowLayout
     }()
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.contentInset = .init(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
         return collectionView
     }()
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .white
+        label.font = label.font.withSize(16)
         return label
     }()
     
@@ -39,7 +42,6 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         setupView()
     }
     
@@ -67,16 +69,14 @@ extension HomeView: CodeView {
             make.top.equalTo(titleLabel.layout.safeArea.bottom, constant: 8)
             make.left.equalTo(self.layout.safeArea.left)
             make.right.equalTo(self.layout.safeArea.right)
-            make.height.equalTo(constant: 200)
+            make.height.equalTo(constant: collectionViewHeight)
         }
-        
     }
     func setupAdditionalConfiguration() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(MovieCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
-        
         backgroundColor = .black
     }
 }

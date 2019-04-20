@@ -13,16 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
+    var genres = Genres.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        coordinator = Coordinator(controller: HomeViewController())
+        coordinator = Coordinator()
         
         window?.rootViewController = coordinator?.rootViewController
         window?.makeKeyAndVisible()
+        
+        genres.fetchGenres()
         
         return true
     }

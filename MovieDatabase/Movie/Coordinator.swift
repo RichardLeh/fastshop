@@ -11,7 +11,10 @@ import UIKit
 final class Coordinator {
     let rootViewController: UIViewController
 
-    init(controller: UIViewController) {
-        self.rootViewController = controller
+    init() {
+        let service = MovieService()
+        let homeViewController = HomeViewController(service: service)
+        
+        self.rootViewController = homeViewController
     }
 }

@@ -10,15 +10,6 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
     
-    var titleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = label.font.withSize(12)
-        label.numberOfLines = 0
-        return label
-    }()
-    
     var posterImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
@@ -26,25 +17,44 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
         return imageView
     }()
     
+    var titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = label.font.withSize(12)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    var genreLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .lightGray
+        label.font = label.font.withSize(12)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.backgroundColor = .magenta
         setupView()
     }
     
     func setupView(with movie: Movie) {
         titleLabel.text = movie.title
+        titleLabel.sizeToFit()
+        titleLabel.setNeedsDisplay()
+        
+        genreLabel.text = movie.genreFirst
         
         let moviePlaceholder = MoviePlaceholder()
-        
         posterImageView.image = nil
         posterImageView.kf.setImage(with: movie.posterURL,
                                     placeholder: moviePlaceholder,
-                                    options: [.transition(.fade(0.5))]) { result in
+                                    options: [.cacheOriginalImage, .transition(.fade(0.5))]) { result in
                                         switch result {
                                         case .success(let value):
                                             moviePlaceholder.remove()
                                             print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                                            print("Cache Type: \(value.cacheType)")
                                         case .failure(let error):
                                             print("Job failed: \(error.localizedDescription)")
                                         }
@@ -58,23 +68,28 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
 
 extension MovieCollectionViewCell: CodeView {
     func buildViewHierarchy() {
-        addSubview(posterImageView)
-        addSubview(titleLabel)
+        addView(posterImageView, titleLabel, genreLabel)
     }
     
     func setupConstraints() {
         posterImageView.layout.makeConstraints { (make) in
-            make.top.equalTo(self.layout.top)
-            make.right.equalTo(self.layout.right)
-            make.bottom.equalTo(self.layout.bottom)
-            make.left.equalTo(self.layout.left)
+            make.top.equalTo(layout.top)
+            make.right.equalTo(layout.right)
+            make.left.equalTo(layout.left)
+            make.height.equalTo(constant: 170)
         }
         
         titleLabel.layout.makeConstraints { make in
-            make.height.equalTo(constant: 40)
-            make.left.equalTo(self.layout.left)
-            make.right.equalTo(self.layout.right)
-            make.bottom.equalTo(self.layout.bottom)
+            make.top.equalTo(posterImageView.layout.bottom, constant: 8)
+            make.height.lessThanOrEqualTo(constant: 30)
+            make.left.equalTo(layout.left)
+            make.right.equalTo(layout.right)
+            make.bottom.equalTo(genreLabel.layout.top, constant: -4)
+        }
+        
+        genreLabel.layout.makeConstraints { make in
+            make.left.equalTo(layout.left)
+            make.right.equalTo(layout.right)
         }
     }
 }

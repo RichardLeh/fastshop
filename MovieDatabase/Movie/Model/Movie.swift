@@ -29,6 +29,19 @@ class Movie: Codable {
         return URL(string: "https://image.tmdb.org/t/p/w300\(path)")
     }()
     
+    lazy var genreFirst: String = {
+        guard let firstGenrer = Genres.shared.getNames(genres).first else {
+            return ""
+        }
+        
+        return firstGenrer
+    }()
+    
+    lazy var genreListName: String = {
+        let movieGenres = Genres.shared.getNames(genres)
+        return movieGenres.joined(separator: ",")
+    }()
+    
     enum CodingKeys: String, CodingKey {
         case movieId = "id"
         case genres = "genre_ids"
