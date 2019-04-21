@@ -33,17 +33,22 @@
 		C5E1FD2B222ED89C00485EA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD2A222ED89C00485EA9 /* HomeViewController.swift */; };
 		C5E1FD30222ED89E00485EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */; };
 		C5E1FD33222ED89E00485EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E1FD31222ED89E00485EA9 /* LaunchScreen.storyboard */; };
-		C5E1FD3E222ED89E00485EA9 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD3D222ED89E00485EA9 /* MovieTests.swift */; };
 		C5E1FD4B222EDDD700485EA9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */; };
 		C5E1FD51222EF31200485EA9 /* LayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E1FD50222EF31100485EA9 /* LayoutKit.framework */; };
 		C5E1FD53222EF9D800485EA9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD52222EF9D800485EA9 /* Coordinator.swift */; };
 		C5E1FD56222EFC5100485EA9 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD55222EFC5100485EA9 /* CodeView.swift */; };
 		C5E1FD5A222F197E00485EA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD59222F197E00485EA9 /* HomeView.swift */; };
 		C5E1FD5C222F1DC300485EA9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1FD5B222F1DC300485EA9 /* HomeViewModel.swift */; };
+		C5F2C62A226CD4D00035AF1B /* MoviePlaceholderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F2C629226CD4CF0035AF1B /* MoviePlaceholderTest.swift */; };
+		C5F2C62E226CD5D80035AF1B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F2C62C226CD5D80035AF1B /* Nimble.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C5F2C62F226CD5D80035AF1B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F2C62D226CD5D80035AF1B /* Quick.framework */; };
+		C5F2C66B226D28C70035AF1B /* CoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F2C66A226D28C70035AF1B /* CoordinatorTest.swift */; };
+		C5F2C671226D30130035AF1B /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F2C670226D30130035AF1B /* HomeViewControllerTest.swift */; };
+		C5F2C676226D30FC0035AF1B /* MovieServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F2C675226D30FC0035AF1B /* MovieServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5E1FD3A222ED89E00485EA9 /* PBXContainerItemProxy */ = {
+		C5F2C623226CD3DB0035AF1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5E1FD1D222ED89C00485EA9 /* Project object */;
 			proxyType = 1;
@@ -81,15 +86,20 @@
 		C5E1FD2F222ED89E00485EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5E1FD32222ED89E00485EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5E1FD34222ED89E00485EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5E1FD39222ED89E00485EA9 /* MovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5E1FD3D222ED89E00485EA9 /* MovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTests.swift; sourceTree = "<group>"; };
-		C5E1FD3F222ED89E00485EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C5E1FD50222EF31100485EA9 /* LayoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayoutKit.framework; path = Carthage/Build/iOS/LayoutKit.framework; sourceTree = "<group>"; };
 		C5E1FD52222EF9D800485EA9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = ../Coordinator.swift; sourceTree = "<group>"; };
 		C5E1FD55222EFC5100485EA9 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CodeView.swift; path = ../CodeView.swift; sourceTree = "<group>"; };
 		C5E1FD59222F197E00485EA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C5E1FD5B222F1DC300485EA9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C5F2C61E226CD3DA0035AF1B /* MovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F2C622226CD3DB0035AF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5F2C629226CD4CF0035AF1B /* MoviePlaceholderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlaceholderTest.swift; sourceTree = "<group>"; };
+		C5F2C62C226CD5D80035AF1B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		C5F2C62D226CD5D80035AF1B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		C5F2C66A226D28C70035AF1B /* CoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTest.swift; sourceTree = "<group>"; };
+		C5F2C670226D30130035AF1B /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
+		C5F2C675226D30FC0035AF1B /* MovieServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +113,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5E1FD36222ED89E00485EA9 /* Frameworks */ = {
+		C5F2C61B226CD3DA0035AF1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F2C62E226CD5D80035AF1B /* Nimble.framework in Frameworks */,
+				C5F2C62F226CD5D80035AF1B /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				C5E1FD27222ED89C00485EA9 /* Movie */,
-				C5E1FD3C222ED89E00485EA9 /* MovieTests */,
+				C5F2C61F226CD3DB0035AF1B /* MovieTests */,
 				C5E1FD26222ED89C00485EA9 /* Products */,
 				C5E1FD49222EDDD600485EA9 /* Frameworks */,
 			);
@@ -198,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C5E1FD25222ED89C00485EA9 /* Movie.app */,
-				C5E1FD39222ED89E00485EA9 /* MovieTests.xctest */,
+				C5F2C61E226CD3DA0035AF1B /* MovieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,18 +229,11 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
-		C5E1FD3C222ED89E00485EA9 /* MovieTests */ = {
-			isa = PBXGroup;
-			children = (
-				C5E1FD3D222ED89E00485EA9 /* MovieTests.swift */,
-				C5E1FD3F222ED89E00485EA9 /* Info.plist */,
-			);
-			path = MovieTests;
-			sourceTree = "<group>";
-		};
 		C5E1FD49222EDDD600485EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5F2C62C226CD5D80035AF1B /* Nimble.framework */,
+				C5F2C62D226CD5D80035AF1B /* Quick.framework */,
 				C55ADD96226AD6EC002A6265 /* Kingfisher.framework */,
 				C5E1FD50222EF31100485EA9 /* LayoutKit.framework */,
 				C5E1FD4A222EDDD700485EA9 /* Alamofire.framework */,
@@ -260,6 +265,42 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		C5F2C61F226CD3DB0035AF1B /* MovieTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5F2C673226D30E00035AF1B /* Mock */,
+				C5F2C628226CD4CF0035AF1B /* Helper */,
+				C5F2C66D226D2FAE0035AF1B /* Home */,
+				C5F2C622226CD3DB0035AF1B /* Info.plist */,
+			);
+			path = MovieTests;
+			sourceTree = "<group>";
+		};
+		C5F2C628226CD4CF0035AF1B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C5F2C629226CD4CF0035AF1B /* MoviePlaceholderTest.swift */,
+				C5F2C66A226D28C70035AF1B /* CoordinatorTest.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C5F2C66D226D2FAE0035AF1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C5F2C670226D30130035AF1B /* HomeViewControllerTest.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C5F2C673226D30E00035AF1B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C5F2C675226D30FC0035AF1B /* MovieServiceMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,22 +324,23 @@
 			productReference = C5E1FD25222ED89C00485EA9 /* Movie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C5E1FD38222ED89E00485EA9 /* MovieTests */ = {
+		C5F2C61D226CD3DA0035AF1B /* MovieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5E1FD45222ED89E00485EA9 /* Build configuration list for PBXNativeTarget "MovieTests" */;
+			buildConfigurationList = C5F2C625226CD3DB0035AF1B /* Build configuration list for PBXNativeTarget "MovieTests" */;
 			buildPhases = (
-				C5E1FD35222ED89E00485EA9 /* Sources */,
-				C5E1FD36222ED89E00485EA9 /* Frameworks */,
-				C5E1FD37222ED89E00485EA9 /* Resources */,
+				C5F2C61A226CD3DA0035AF1B /* Sources */,
+				C5F2C61B226CD3DA0035AF1B /* Frameworks */,
+				C5F2C61C226CD3DA0035AF1B /* Resources */,
+				C5F2C62B226CD5600035AF1B /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C5E1FD3B222ED89E00485EA9 /* PBXTargetDependency */,
+				C5F2C624226CD3DB0035AF1B /* PBXTargetDependency */,
 			);
 			name = MovieTests;
 			productName = MovieTests;
-			productReference = C5E1FD39222ED89E00485EA9 /* MovieTests.xctest */;
+			productReference = C5F2C61E226CD3DA0035AF1B /* MovieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,16 +349,15 @@
 		C5E1FD1D222ED89C00485EA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Richard Leh";
 				TargetAttributes = {
 					C5E1FD24222ED89C00485EA9 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					C5E1FD38222ED89E00485EA9 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
+					C5F2C61D226CD3DA0035AF1B = {
+						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = C5E1FD24222ED89C00485EA9;
 					};
 				};
@@ -335,7 +376,7 @@
 			projectRoot = "";
 			targets = (
 				C5E1FD24222ED89C00485EA9 /* Movie */,
-				C5E1FD38222ED89E00485EA9 /* MovieTests */,
+				C5F2C61D226CD3DA0035AF1B /* MovieTests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5E1FD37222ED89E00485EA9 /* Resources */ = {
+		C5F2C61C226CD3DA0035AF1B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,6 +463,28 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		C5F2C62B226CD5600035AF1B /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Quick.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -457,21 +520,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5E1FD35222ED89E00485EA9 /* Sources */ = {
+		C5F2C61A226CD3DA0035AF1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E1FD3E222ED89E00485EA9 /* MovieTests.swift in Sources */,
+				C5F2C676226D30FC0035AF1B /* MovieServiceMock.swift in Sources */,
+				C5F2C66B226D28C70035AF1B /* CoordinatorTest.swift in Sources */,
+				C5F2C671226D30130035AF1B /* HomeViewControllerTest.swift in Sources */,
+				C5F2C62A226CD4D00035AF1B /* MoviePlaceholderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C5E1FD3B222ED89E00485EA9 /* PBXTargetDependency */ = {
+		C5F2C624226CD3DB0035AF1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C5E1FD24222ED89C00485EA9 /* Movie */;
-			targetProxy = C5E1FD3A222ED89E00485EA9 /* PBXContainerItemProxy */;
+			targetProxy = C5F2C623226CD3DB0035AF1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -623,12 +689,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8MTQKCG63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Movie/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -645,12 +713,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S8MTQKCG63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Movie/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,13 +733,18 @@
 			};
 			name = Release;
 		};
-		C5E1FD46222ED89E00485EA9 /* Debug */ = {
+		C5F2C626226CD3DB0035AF1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				INFOPLIST_FILE = MovieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,16 +755,22 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie.app/Movie";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = NO;
 			};
 			name = Debug;
 		};
-		C5E1FD47222ED89E00485EA9 /* Release */ = {
+		C5F2C627226CD3DB0035AF1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				INFOPLIST_FILE = MovieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,6 +781,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie.app/Movie";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = NO;
 			};
 			name = Release;
 		};
@@ -724,11 +806,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5E1FD45222ED89E00485EA9 /* Build configuration list for PBXNativeTarget "MovieTests" */ = {
+		C5F2C625226CD3DB0035AF1B /* Build configuration list for PBXNativeTarget "MovieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5E1FD46222ED89E00485EA9 /* Debug */,
-				C5E1FD47222ED89E00485EA9 /* Release */,
+				C5F2C626226CD3DB0035AF1B /* Debug */,
+				C5F2C627226CD3DB0035AF1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
