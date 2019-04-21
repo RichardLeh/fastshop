@@ -8,27 +8,34 @@
 
 import UIKit
 
-let collectionViewHeight: CGFloat = 240.0
-
 final class HomeView: UIView {
     
-    let flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 110, height: collectionViewHeight - 20)
-        return flowLayout
+    private var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: .zero)
+        return scrollView
     }()
-    lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
-        return collectionView
+    
+    let popularMovieSection: MovieSectionView = {
+        let sectionView = MovieSectionView(frame: .zero)
+        return sectionView
     }()
-    lazy var titleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.textColor = .white
-        label.font = label.font.withSize(16)
-        return label
+    
+    let topRatedMovieSection: MovieSectionView = {
+        let sectionView = MovieSectionView(frame: .zero)
+        return sectionView
     }()
+    
+    var popularViewModel: PopularMovieSectionViewModel = PopularMovieSectionViewModel(movies: []) {
+        didSet {
+            updateView()
+        }
+    }
+    
+    var topRatedViewModel: TopRatedMovieSectionViewModel = TopRatedMovieSectionViewModel(movies: []) {
+        didSet {
+            updateView()
+        }
+    }
     
     var viewModel: HomeViewModel = HomeViewModel() {
         didSet {
@@ -46,61 +53,46 @@ final class HomeView: UIView {
     }
     
     private func updateView() {
-        collectionView.reloadData()
-        titleLabel.text = "Popular Movies"
+        popularMovieSection.viewModel = self.popularViewModel
+        topRatedMovieSection.viewModel = self.topRatedViewModel
     }
 }
 
 extension HomeView: CodeView {
     func buildViewHierarchy() {
-        addView(titleLabel, collectionView)
+        addSubview(scrollView)
+        scrollView.addSubview(popularMovieSection)
+        scrollView.addSubview(topRatedMovieSection)
     }
     
     func setupConstraints() {
         
-        titleLabel.layout.makeConstraints { make in
-            make.top.equalTo(self.layout.safeArea.top, constant: 20)
-            make.left.equalTo(self.layout.safeArea.left, constant: 16)
-            make.right.equalTo(self.layout.safeArea.right, constant: -16)
-            make.height.equalTo(constant: 20)
+        scrollView.layout.makeConstraints { make in
+            make.top.equalTo(layout.safeArea.top)
+            make.left.equalTo(layout.safeArea.left)
+            make.right.equalTo(layout.safeArea.right)
+            make.bottom.equalTo(layout.safeArea.bottom)
         }
         
-        collectionView.layout.makeConstraints { make in
-            make.top.equalTo(titleLabel.layout.safeArea.bottom, constant: 8)
-            make.left.equalTo(self.layout.safeArea.left)
-            make.right.equalTo(self.layout.safeArea.right)
-            make.height.equalTo(constant: collectionViewHeight)
+        popularMovieSection.layout.makeConstraints { make in
+            make.top.equalTo(scrollView.layout.top)
+            make.left.equalTo(scrollView.layout.left)
+            make.width.equalTo(layout.width)
+            make.height.equalTo(constant: popularMovieSection.sectionHeight)
+        }
+        
+        topRatedMovieSection.layout.makeConstraints { make in
+            make.top.equalTo(popularMovieSection.layout.bottom)
+            make.left.equalTo(scrollView.layout.left)
+            make.width.equalTo(layout.width)
+            make.height.equalTo(constant: topRatedMovieSection.sectionHeight)
         }
     }
     func setupAdditionalConfiguration() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(MovieCollectionViewCell.self,
-                                forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         backgroundColor = .black
-    }
-}
-
-extension HomeView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath, viewModel.items[indexPath.row].title)
-    }
-}
-
-extension HomeView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.items.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier,
-                                                            for: indexPath) as? MovieCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        let movie = viewModel.items[indexPath.row]
-        cell.setupView(with: movie)
-
-        return cell
+        
+        let contentSizeHeight = popularMovieSection.sectionHeight +
+                                topRatedMovieSection.sectionHeight
+        scrollView.contentSize = CGSize(width: 0, height: contentSizeHeight)
     }
 }

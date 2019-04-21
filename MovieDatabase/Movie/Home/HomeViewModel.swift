@@ -9,18 +9,29 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var items: [Movie] { get }
+    var popularMovieSection: MovieSectionViewModelProtocol { get }
+    var topRatedMovieSection: MovieSectionViewModelProtocol { get }
 }
 
 struct HomeViewModel: HomeViewModelProtocol {
-    var items: [Movie]
+    var popularMovieSection: MovieSectionViewModelProtocol
+    var topRatedMovieSection: MovieSectionViewModelProtocol
     init() {
-        items = []
+        popularMovieSection = PopularMovieSectionViewModel(movies: [])
+        topRatedMovieSection = TopRatedMovieSectionViewModel(movies: [])
     }
 }
 
 extension HomeViewModel {
-    init(movies: [Movie]) {
-        self.items = movies
+    init(popularSection: PopularMovieSectionViewModel?,
+         topRatedSection: TopRatedMovieSectionViewModel?) {
+        
+        self.init()
+        if let popularSection = popularSection {
+            self.popularMovieSection = popularSection
+        }
+        if let topRatedSection = topRatedSection {
+            self.topRatedMovieSection = topRatedSection
+        }
     }
 }

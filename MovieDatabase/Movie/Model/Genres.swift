@@ -13,6 +13,7 @@ final class Genres: Codable {
     var genres: [Genre]?
 }
 
+// TODO: It needs refactor
 extension Genres {
     func fetchGenres() {
         let service = MovieService()
@@ -41,8 +42,6 @@ extension Genres {
             
             return nil
         }
-        
         return names
     }
-
 }

@@ -31,15 +31,15 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loadData()
+        loadPopularData()
+        loadTopRatedData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    func loadData() {
-        
+    private func loadPopularData() {
         service.fetchPopularMovies(page: 0) { result in
             switch result {
             case .success(let response):
@@ -47,8 +47,23 @@ final class HomeViewController: UIViewController {
                     return
                 }
                 
-                let model = HomeViewModel(movies: movies)
-                self.mainView.viewModel = model
+                let popular = PopularMovieSectionViewModel(movies: movies)
+                self.mainView.popularViewModel = popular
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    private func loadTopRatedData() {
+        service.fetchTopRatedMovies(page: 0) { result in
+            switch result {
+            case .success(let response):
+                guard let movies = response.results else {
+                    return
+                }
+                
+                let topRated = TopRatedMovieSectionViewModel(movies: movies)
+                self.mainView.topRatedViewModel = topRated
             case .error(let error):
                 print(error.localizedDescription)
             }
