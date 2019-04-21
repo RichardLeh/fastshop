@@ -28,7 +28,7 @@ final class MovieSectionView: UIView {
     }()
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
+        label.textColor = ColorName.sectionTitle.color
         label.font = label.font.withSize(14)
         return label
     }()
@@ -80,7 +80,6 @@ extension MovieSectionView: CodeView {
         collectionView.delegate = self
         collectionView.register(MovieCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
-        backgroundColor = .black
     }
 }
 

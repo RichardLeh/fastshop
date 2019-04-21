@@ -4,3 +4,8 @@ strings:
   outputs:
     - templateName: structured-swift4
       output: Movie/Generated/L10n.swift
+colors:
+  inputs: Movie/Resource/Base.lproj/Colors.txt
+  outputs:
+    templateName: swift4
+    output: Movie/Generated/Colors.swift

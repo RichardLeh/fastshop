@@ -1,0 +1,4 @@
+SectionTitle        : 0xFFFFFF
+MovieItemTitle      : 0xFFFFFF
+MovieItemSubtitle   : 0xCCCCCC
+BackgroundDefault   : 0x000000

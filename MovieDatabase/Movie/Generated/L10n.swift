@@ -11,10 +11,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
-  /// Data Loaded!
-  internal static let dataLoaded = L10n.tr("Movie", "data_loaded")
-  /// Loading Data...
-  internal static let loadingData = L10n.tr("Movie", "loading_data")
 
   internal enum Home {
     /// Popular Movies

@@ -89,7 +89,7 @@ extension HomeView: CodeView {
         }
     }
     func setupAdditionalConfiguration() {
-        backgroundColor = .black
+        backgroundColor = ColorName.backgroundDefault.color
         
         let contentSizeHeight = popularMovieSection.sectionHeight +
                                 topRatedMovieSection.sectionHeight

@@ -19,7 +19,7 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
     
     var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
+        label.textColor = ColorName.movieItemTitle.color
         label.font = label.font.withSize(12)
         label.numberOfLines = 0
         return label
@@ -27,7 +27,7 @@ class MovieCollectionViewCell: UICollectionViewCell, Identifiable {
     
     var genreLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .lightGray
+        label.textColor = ColorName.movieItemSubtitle.color
         label.font = label.font.withSize(12)
         label.numberOfLines = 0
         return label
