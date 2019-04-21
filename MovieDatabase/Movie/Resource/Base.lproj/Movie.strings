@@ -1,0 +1,10 @@
+/*
+  Movie.strings
+  Movie
+
+  Created by Richard Leh on 21/04/19.
+  Copyright © 2019 Richard Leh. All rights reserved.
+*/
+
+"Home.PopularTitleSection" = "Popular Movies";
+"Home.TopRatedTitleSection" = "Top Rated Movies";

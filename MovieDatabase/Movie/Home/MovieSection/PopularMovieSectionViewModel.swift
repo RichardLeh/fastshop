@@ -13,7 +13,7 @@ struct PopularMovieSectionViewModel: MovieSectionViewModelProtocol {
     var movies: [Movie]
     
     init(movies: [Movie]) {
-        self.title = "Popular Movies"
+        self.title = L10n.Home.popularTitleSection
         self.movies = movies
     }
 }

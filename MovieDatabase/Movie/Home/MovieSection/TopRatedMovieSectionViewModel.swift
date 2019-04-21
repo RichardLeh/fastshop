@@ -13,7 +13,7 @@ struct TopRatedMovieSectionViewModel: MovieSectionViewModelProtocol {
     var movies: [Movie]
     
     init(movies: [Movie]) {
-        self.title = "Top Rated"
+        self.title = L10n.Home.topRatedTitleSection
         self.movies = movies
     }
 }
