@@ -9,12 +9,15 @@
 import Foundation
 
 enum Endpoints {
+    case upcoming
     case popular
     case topRated
     case genre
     
     var path: String {
         switch self {
+        case .upcoming:
+            return "movie/upcoming"
         case .popular:
             return "movie/popular"
         case .topRated:
@@ -28,6 +31,7 @@ enum Endpoints {
 protocol MovieServiceProtocol {
     func fetchPopularMovies(page: Int, completion: @escaping (Result<PopularMovies, APIError>) -> Void)
     func fetchTopRatedMovies(page: Int, completion: @escaping (Result<TopRatedMovies, APIError>) -> Void)
+    func fetchUpcomingMovies(page: Int, completion: @escaping (Result<UpcomingMovies, APIError>) -> Void)
     func fetchGenres(completion: @escaping (Result<Genres, APIError>) -> Void)
 }
 
@@ -40,12 +44,14 @@ extension MovieService: MovieServiceProtocol {
         let request = Request(url: Endpoints.popular.path)
         request.get(completion: completion)
     }
-    
     func fetchTopRatedMovies(page: Int, completion: @escaping (Result<TopRatedMovies, APIError>) -> Void) {
         let request = Request(url: Endpoints.topRated.path)
         request.get(completion: completion)
     }
-    
+    func fetchUpcomingMovies(page: Int, completion: @escaping (Result<UpcomingMovies, APIError>) -> Void) {
+        let request = Request(url: Endpoints.upcoming.path)
+        request.get(completion: completion)
+    }
     func fetchGenres(completion: @escaping (Result<Genres, APIError>) -> Void) {
         let request = Request(url: Endpoints.genre.path)
         request.get(completion: completion)

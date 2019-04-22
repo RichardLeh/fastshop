@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Movie: Codable {
+public class Movie: Codable {
     
     var movieId: Int64!
     var title: String = ""
@@ -20,7 +20,6 @@ class Movie: Codable {
     var dateAddedToFavorites: Date?
     var backdropPath: String?
     
-    var posterImage: UIImage?
     lazy var posterURL: URL? = {
         guard let path = posterPath else {
             return URL(string: "")
@@ -29,6 +28,14 @@ class Movie: Codable {
         return URL(string: "https://image.tmdb.org/t/p/w300\(path)")
     }()
     
+    lazy var backdropURL: URL? = {
+        guard let path = backdropPath else {
+            return URL(string: "")
+        }
+        
+        return URL(string: "https://image.tmdb.org/t/p/w500\(path)")
+    }()
+
     lazy var genreFirst: String = {
         guard let firstGenrer = Genres.shared.getNames(genres).first else {
             return ""

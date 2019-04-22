@@ -31,6 +31,7 @@ public class HomeViewController: UIViewController {
     }
     
     public override func viewWillAppear(_ animated: Bool) {
+        loadUpcomingData()
         loadPopularData()
         loadTopRatedData()
     }
@@ -38,7 +39,21 @@ public class HomeViewController: UIViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+    private func loadUpcomingData() {
+        service.fetchUpcomingMovies(page: 0) { result in
+            switch result {
+            case .success(let response):
+                guard let movies = response.results else {
+                    return
+                }
+                
+                let upcoming = UpcomingMovieSectionViewModel(movies: movies)
+                self.mainView.upcomingViewModel = upcoming
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     private func loadPopularData() {
         service.fetchPopularMovies(page: 0) { result in
             switch result {

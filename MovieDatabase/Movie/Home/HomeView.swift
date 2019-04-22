@@ -14,30 +14,30 @@ final class HomeView: UIView {
         let scrollView = UIScrollView(frame: .zero)
         return scrollView
     }()
-    
+    let upcomingMovieSection: MovieFullSectionView = {
+        let sectionView = MovieFullSectionView(frame: .zero)
+        return sectionView
+    }()
     let popularMovieSection: MovieSectionView = {
         let sectionView = MovieSectionView(frame: .zero)
         return sectionView
     }()
-    
     let topRatedMovieSection: MovieSectionView = {
         let sectionView = MovieSectionView(frame: .zero)
         return sectionView
     }()
     
+    var upcomingViewModel: UpcomingMovieSectionViewModel = UpcomingMovieSectionViewModel(movies: []) {
+        didSet {
+            updateView()
+        }
+    }
     var popularViewModel: PopularMovieSectionViewModel = PopularMovieSectionViewModel(movies: []) {
         didSet {
             updateView()
         }
     }
-    
     var topRatedViewModel: TopRatedMovieSectionViewModel = TopRatedMovieSectionViewModel(movies: []) {
-        didSet {
-            updateView()
-        }
-    }
-    
-    var viewModel: HomeViewModel = HomeViewModel() {
         didSet {
             updateView()
         }
@@ -53,6 +53,7 @@ final class HomeView: UIView {
     }
     
     private func updateView() {
+        upcomingMovieSection.viewModel = self.upcomingViewModel
         popularMovieSection.viewModel = self.popularViewModel
         topRatedMovieSection.viewModel = self.topRatedViewModel
     }
@@ -61,6 +62,7 @@ final class HomeView: UIView {
 extension HomeView: CodeView {
     func buildViewHierarchy() {
         addSubview(scrollView)
+        scrollView.addSubview(upcomingMovieSection)
         scrollView.addSubview(popularMovieSection)
         scrollView.addSubview(topRatedMovieSection)
     }
@@ -73,26 +75,34 @@ extension HomeView: CodeView {
             make.right.equalTo(layout.safeArea.right)
             make.bottom.equalTo(layout.safeArea.bottom)
         }
-        
-        popularMovieSection.layout.makeConstraints { make in
+
+        upcomingMovieSection.layout.makeConstraints { make in
             make.top.equalTo(scrollView.layout.top)
             make.left.equalTo(scrollView.layout.left)
             make.width.equalTo(layout.width)
-            make.height.equalTo(constant: popularMovieSection.sectionHeight)
+            make.height.equalTo(constant: upcomingMovieSection.sectionHeight())
+        }
+        
+        popularMovieSection.layout.makeConstraints { make in
+            make.top.equalTo(upcomingMovieSection.layout.bottom, constant: 8)
+            make.left.equalTo(scrollView.layout.left)
+            make.width.equalTo(layout.width)
+            make.height.equalTo(constant: popularMovieSection.sectionHeight())
         }
         
         topRatedMovieSection.layout.makeConstraints { make in
             make.top.equalTo(popularMovieSection.layout.bottom)
             make.left.equalTo(scrollView.layout.left)
             make.width.equalTo(layout.width)
-            make.height.equalTo(constant: topRatedMovieSection.sectionHeight)
+            make.height.equalTo(constant: topRatedMovieSection.sectionHeight())
         }
     }
     func setupAdditionalConfiguration() {
         backgroundColor = ColorName.backgroundDefault.color
         
-        let contentSizeHeight = popularMovieSection.sectionHeight +
-                                topRatedMovieSection.sectionHeight
+        let contentSizeHeight = upcomingMovieSection.sectionHeight() +
+                                popularMovieSection.sectionHeight() +
+                                topRatedMovieSection.sectionHeight() + 8
         scrollView.contentSize = CGSize(width: 0, height: contentSizeHeight)
     }
 }

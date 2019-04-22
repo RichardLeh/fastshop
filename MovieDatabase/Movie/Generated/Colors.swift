@@ -22,6 +22,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
   /// Alpha: 100% <br/> (0x000000ff)
   internal static let backgroundDefault = ColorName(rgbaValue: 0x000000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#eeeeee"></span>
+  /// Alpha: 100% <br/> (0xeeeeeeff)
+  internal static let movieFullItemTitle = ColorName(rgbaValue: 0xeeeeeeff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#cccccc"></span>
   /// Alpha: 100% <br/> (0xccccccff)
   internal static let movieItemSubtitle = ColorName(rgbaValue: 0xccccccff)

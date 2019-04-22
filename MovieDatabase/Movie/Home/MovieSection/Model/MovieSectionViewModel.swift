@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MovieSectionViewModelProtocol {
+public protocol MovieSectionViewModelProtocol {
     var title: String { get }
     var movies: [Movie] { get }
 }
