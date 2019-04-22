@@ -10,6 +10,8 @@ import UIKit
 
 final class HomeView: UIView {
     
+    weak var delegate: MovieSectionDelegateProtocol?
+    
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
         return scrollView
@@ -49,6 +51,9 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        upcomingMovieSection.delegate = self
+        popularMovieSection.delegate = self
+        topRatedMovieSection.delegate = self
         setupView()
     }
     
@@ -104,5 +109,11 @@ extension HomeView: CodeView {
                                 popularMovieSection.sectionHeight() +
                                 topRatedMovieSection.sectionHeight() + 8
         scrollView.contentSize = CGSize(width: 0, height: contentSizeHeight)
+    }
+}
+
+extension HomeView: MovieSectionDelegateProtocol {
+    public func didSelect(movie: Movie) {
+        self.delegate?.didSelect(movie: movie)
     }
 }

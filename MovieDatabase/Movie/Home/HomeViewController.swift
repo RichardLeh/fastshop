@@ -27,7 +27,9 @@ public class HomeViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = HomeView(frame: self.view.frame)
+        let homeView = HomeView(frame: self.view.frame)
+        homeView.delegate = self
+        self.view = homeView
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -83,5 +85,12 @@ public class HomeViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+}
+
+extension HomeViewController: MovieSectionDelegateProtocol {
+    public func didSelect(movie: Movie) {
+        //TODO: Show movie details
+        print("didSelect movie: \(movie.title)")
     }
 }

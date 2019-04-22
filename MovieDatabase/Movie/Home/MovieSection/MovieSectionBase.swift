@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol MovieSectionDelegateProtocol: class {
+    func didSelect(movie: Movie)
+}
+
 public protocol MovieSectionProtocol {
     var flowLayout: UICollectionViewFlowLayout { get set }
     var collectionView: UICollectionView { get set }
@@ -18,6 +22,7 @@ public protocol MovieSectionProtocol {
 }
 
 public class MovieSectionBase: UIView, MovieSectionProtocol {
+    public weak var delegate: MovieSectionDelegateProtocol?
     
     public var flowLayout: UICollectionViewFlowLayout
     public var collectionView: UICollectionView
@@ -56,8 +61,8 @@ public class MovieSectionBase: UIView, MovieSectionProtocol {
 
 extension MovieSectionBase: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: Show movie details
-        print(indexPath, viewModel.movies[indexPath.row].title)
+        let movie = viewModel.movies[indexPath.row]
+        delegate?.didSelect(movie: movie)
     }
 }
 
