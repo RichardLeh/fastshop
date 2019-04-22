@@ -40,10 +40,8 @@ class MovieFullCollectionViewCell: UICollectionViewCell, Identifiable {
                                       placeholder: moviePlaceholder,
                                       options: [.cacheOriginalImage, .transition(.fade(0.5))]) { result in
                                       switch result {
-                                      case .success(let value):
+                                      case .success:
                                         moviePlaceholder.remove()
-                                        print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                                        print("Cache Type: \(value.cacheType)")
                                       case .failure(let error):
                                         print("Job failed: \(error.localizedDescription)")
                                       }
