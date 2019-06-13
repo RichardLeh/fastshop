@@ -2,7 +2,7 @@
 
 First of all, I would like to thank you for the opportunity.
 
-For this test these 'libs' to develop:
+For this test I used these 'libs' to develop:
 
 	Carthage,
 	Swiftlint,
